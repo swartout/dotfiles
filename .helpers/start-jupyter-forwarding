@@ -1,0 +1,25 @@
+#!/bin/bash
+JUPYTER_INFO=$(ssh klone-node 'cat ~/.jupyter-port-and-token' 2>/dev/null)
+
+if [[ -z $JUPYTER_INFO ]]; then
+    echo "Error: Couldn't retreive Jupyter server port/token"
+    exit 1
+fi
+
+JUPYTER_PORT=${JUPYTER_INFO% *}
+JUPYTER_TOKEN=${JUPYTER_INFO#* }
+
+ssh -o StrictHostKeyChecking=no -N -L 7777:localhost:$JUPYTER_PORT klone-node &
+SSH_PID=$!
+
+if (( $? != 0 )); then
+    echo "Error: Port forwarding failed."
+    exit 1
+fi
+
+echo
+echo "Connect to:"
+echo "  http://localhost:7777/?token=$JUPYTER_TOKEN"
+echo "Close tunnel with: "
+echo "  kill $SSH_PID"
+echo

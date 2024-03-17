@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Check if an argument is provided; if so, use it as the job name. Otherwise, default to 'klone-container'.
+JOB_NAME=${1:-klone-container}
+
+if [ -n "$1" ]; then
+    JOB_NAME_OPTION="--name $1"
+else
+    JOB_NAME_OPTION=""
+fi
+
+NODE=$(ssh klone-login "squeue \
+    --user swartout \
+    --states RUNNING \
+    $JOB_NAME_OPTION \
+    --Format NodeList \
+    --noheader")
+
+# Check if NODE is empty
+if [ -z "$NODE" ]; then
+    echo "No Hyak node is currently running for the specified job. Exiting..."
+    exit 1
+fi
+
+echo "Set Hyak node to: $NODE"
+sed -i -E s"/Hostname.*/Hostname $NODE/" ~/.ssh/klone-node-config
