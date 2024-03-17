@@ -8,3 +8,8 @@
 readme
 requirements (e.g. mac configs, homebrew, yada yada yada)
 script to symlink everything
+
+TODO:
+- oh my zsh
+- karabiner
+- vscode
