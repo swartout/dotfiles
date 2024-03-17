@@ -663,7 +663,7 @@ cmp.setup {
 }
 
 -- set theme
-vim.cmd('colorscheme github_light')
+vim.cmd('colorscheme github_dark_default') -- TODO
 
 -- add automatic formatting on save for certain files
 vim.api.nvim_create_autocmd("BufWritePre", {
