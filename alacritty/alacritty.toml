@@ -1,0 +1,5 @@
+import = [
+    "~/.config/alacritty/themes/themes/github_light.toml"
+]
+
+font.normal = {style = "Regular", family = "CommitMono"}
