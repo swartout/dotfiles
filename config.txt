@@ -2,7 +2,7 @@
 .config/alacritty - done
 .bashrc - done
 .pyenv...? - TODO
-.ssh...? do i want this on other computers? NOTE: must include the ssh files. symlink everything in that folder to the real .ssh folder "Include /path/to/your/second_ssh_config"
+.ssh...? do i want this on other computers? NOTE: must include the ssh files. symlink everything in that folder to the real .ssh folder "Include /path/to/your/second_ssh_config
 .ssh/helpers - done (.helpers/)
 .tmux.conf - done
 readme
