@@ -80,7 +80,7 @@ require('lazy').setup({
 
       -- Adds a number of user-friendly snippets
       -- TODO: re-enable with sorted order
-      -- 'rafamadriz/friendly-snippets', 
+      -- 'rafamadriz/friendly-snippets',
     },
   },
 
@@ -340,13 +340,13 @@ require('telescope').setup {
       },
     },
     vimgrep_arguments = {
-	    "rg",
-	    "--color=never",
-	    "--no-heading",
-	    "--with-filename",
-	    "--line-number",
-	    "--column",
-	    "--smart-case",
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
     }
   },
 }
@@ -427,7 +427,7 @@ vim.defer_fn(function()
     ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-    auto_install = false,
+    auto_install = true,
     -- Install languages synchronously (only applied to `ensure_installed`)
     sync_install = false,
     -- List of parsers to ignore installing
@@ -633,7 +633,7 @@ require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
 -- Load snippets from ~/.config/nvim/LuaSnip/
-require("luasnip.loaders.from_lua").load({paths = {"~/.config/nvim/LuaSnip/"}})
+require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/LuaSnip/" } })
 
 cmp.setup {
   snippet = {
@@ -679,11 +679,11 @@ cmp.setup {
 }
 
 -- set theme
-vim.cmd[[colorscheme nordic]]
+vim.cmd [[colorscheme nordic]]
 
 -- add automatic formatting on save for certain files
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = {"*.py", "*.rs"},  -- List the filetypes you want, e.g., Python and JavaScript files
+  pattern = { "*.py", "*.rs" }, -- List the filetypes you want, e.g., Python and JavaScript files
   callback = function()
     vim.lsp.buf.format()
   end,
@@ -692,27 +692,27 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- add utf encoding
 vim.opt.encoding = 'utf-8'
 
--- enable Zathura for VimTex viewing
-vim.g.vimtex_view_method = 'zathura'
+-- enable Skim for VimTex viewing
+vim.g.vimtex_view_method = 'skim'
 
 -- silence vimtex warnings
 vim.g.vimtex_quickfix_ignore_filters = {
-    'Underfull',
-    'Overfull',
+  'Underfull',
+  'Overfull',
 }
 
 -- toggle conceal level
 _G.toggleConcealLevel = function()
-    if vim.wo.conceallevel == 0 then
-        vim.wo.conceallevel = 2
-    else
-        vim.wo.conceallevel = 0
-    end
+  if vim.wo.conceallevel == 0 then
+    vim.wo.conceallevel = 2
+  else
+    vim.wo.conceallevel = 0
+  end
 end
 
--- Map the toggle function to "localleader lu"
-vim.api.nvim_set_keymap('n', vim.g.maplocalleader .. 'lu', ':lua toggleConcealLevel()<CR>', {noremap = true, silent = true})
-
+-- Map the toggle function to "localleader tu"
+vim.api.nvim_set_keymap('n', vim.g.maplocalleader .. 'tu', ':lua toggleConcealLevel()<CR>',
+  { noremap = true, silent = true })
 
 -- define "Py" to run python file
 vim.api.nvim_create_user_command('Py', function()
