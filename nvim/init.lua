@@ -679,7 +679,7 @@ cmp.setup {
 }
 
 -- set theme
-vim.cmd [[colorscheme nordic]]
+vim.cmd [[colorscheme github_dark_default]]
 
 -- add automatic formatting on save for certain files
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -723,9 +723,6 @@ end, {})
 vim.api.nvim_create_user_command('UpdateSite', function()
   vim.cmd('!bash -ic update-site')
 end, {})
-
--- set highlight color
-vim.api.nvim_set_hl(0, 'Visual', { fg = '#000000', bg = '#9e988e', bold = false, italic = false, underline = false })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
