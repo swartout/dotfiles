@@ -1,8 +1,8 @@
 # add note alias
 alias update-site="ssh lightsail /var/www/site/update.sh"
 
-# add ssh helpers to path
-export PATH=$PATH:~/.ssh/helpers
+# add helpers to path
+export PATH=$PATH:~/.helpers
 
 # add brew to path
 export PATH=/opt/homebrew/bin:$PATH
@@ -15,6 +15,9 @@ alias skim="open -a Skim"
 
 # star wars
 alias may-the-force="ssh -p 1977 sw.taigrr.com"
+
+# add todo
+alias todo="nvim ~/todo/TODO.md"
 
 # setup pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
