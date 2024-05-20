@@ -40,3 +40,6 @@ vim.opt.pumheight = 10
 
 -- add utf encoding
 vim.opt.encoding = 'utf-8'
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
