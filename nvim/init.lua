@@ -209,18 +209,7 @@ require('lazy').setup({
     },
   },
 
-  {
-    'lervag/vimtex',
-  },
-
-  {
-    'fpeterek/nvim-surfers',
-    config = function()
-      require('nvim-surfers').setup({
-        use_tmux = true,
-      })
-    end
-  },
+  'lervag/vimtex',
 
   {
     -- Highlight, edit, and navigate code
@@ -236,7 +225,7 @@ require('lazy').setup({
     lazy = false,
     priority = 1000,
     config = function()
-        require 'nordic' .load()
+        require 'nordic'.load()
     end
   },
 
