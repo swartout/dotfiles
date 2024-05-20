@@ -1,0 +1,3 @@
+#!/bin/bash
+tmux -L robot -f ~/.basic_tmux.conf new -d -s robot 'ssh robot@192.168.64.17'
+tmux -L robot a -t robot
