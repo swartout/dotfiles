@@ -3,7 +3,7 @@ return {
   'tpope/vim-sleuth',
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
 
   -- Highlight todo, notes, etc in comments
   {
